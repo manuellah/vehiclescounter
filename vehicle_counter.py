@@ -46,12 +46,18 @@ def plate_value(plate_num):
     #also the three number and allocate it to nnn
     
     last_letter_value = tuple(num_plates[myplate[1][-1]])[0]
-    nnn = int(num_plates[myplate[1][:-1]])
+    nnn = int(myplate[1][:-1])
     
     last_plate_value = (nnn - 1) * 26 + last_letter_value
     
     # The first constant eg KAA
+    last_letter_value_c = tuple(num_plates[myplate[0][-1]])[1]
+    second_letter_value_c = tuple(num_plates[myplate[0][1]])[2]
     
+    totol = last_plate_value + last_letter_value_c + second_letter_value_c
+    
+    return totol
+print plate_value('KAA 002A')
     
     
     
