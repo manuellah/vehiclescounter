@@ -24,16 +24,42 @@ def populate_no_plates():
             ie for KAA , KBA and KCA
 
     '''
-    no_plates = {}
+    num_plates = {}
     num , i = 0 , 65
      
     while True:
         num += 1
-        no_plates[chr(i)] = (num , (num-1) * 999 * 26, (num-1) * 999 * 26 * 26)
+        num_plates[chr(i)] = (num , (num-1) * 999 * 26, (num-1) * 999 * 26 * 26)
         i += 1
         if i == 91:
             #Letter Z has been initialized so break, our Dictionary is fully populated
             break
+    return num_plates
+
+def plate_value(plate_num):
+    num_plates = populate_no_plates()
+    myplate = plate_num.split()
+    
+    # The second constant eg 001A
+    #get the last_letter (myplate[1][-1]), it's value in zero index of the tuple 
+    #stored in num_plates dict and allocate its value to var last_letter_value and
+    #also the three number and allocate it to nnn
+    
+    last_letter_value = tuple(num_plates[myplate[1][-1]])[0]
+    nnn = int(num_plates[myplate[1][:-1]])
+    
+    last_plate_value = (nnn - 1) * 26 + last_letter_value
+    
+    # The first constant eg KAA
+    
+    
+    
+    
+def plate_validity(plate_num):
+    pass
+def implimentation():
+    pass
+    
 
 
 
