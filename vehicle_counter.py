@@ -97,11 +97,28 @@ def implimentation():
         break
         
     print "\n\n"+"=="*35    
-    print "\nTO PRINT THE NUMBER OF VEHICLE IN BETWEEN {}  AND {}  ".format(plate_1,plate_2)  
+    print "\nTO PRINT THE NUMBER OF VEHICLE IN BETWEEN {}  AND {}  \n".format(plate_1,plate_2)  
     
     #the cars in between the two number plates calculations
+    car_difference = 0
+    plate1_value = plate_value(plate_1)
+    plate2_value = plate_value(plate_2)
+    if plate1_value == plate2_value:
+        print "\n\nTHIS NUMBER PLATES LOOKS ALIKE, PLEASE USE DIFFERENT NUMBER PLATES\n\n"
+        return
+    #substrating one because we ain't including the vehicles number
+    #plate entered, we only need the number in between the two
+    elif plate1_value > plate2_value:
+        car_difference = plate1_value - plate2_value - 1
+    else:
+        car_difference = plate2_value - plate1_value - 1
+        
     
+    print "**"* 40    
+    print "\n\n\tTHERE ARE   {}  CARS IN BETWEEN THE TWO NUMBER PLATES\n\n".format(car_difference)
+    print "**"* 40    
     
+implimentation()  
     
 
 
