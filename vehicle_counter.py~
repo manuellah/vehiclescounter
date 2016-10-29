@@ -61,47 +61,16 @@ def plate_value(plate_num):
     return totol
     
 def plate_validity(plate_num):
+    number_plate = plate_num.upper().strip()
     pattern = r'K[A-Z][A-Z]\s\d\d\d[A-Z]'
-    if re.match(pattern,plate_num):
+    if re.match(pattern,"number_plate"):
         return True
     else:
         return False
     
 def implimentation():
-    #getting the number plate from the user and validating it.
-    plate_1 = ''
-    plate_2 = ''
-    while True:
-        print "\nThe format of the input should be in this format, 'KCA 081Y'\n"
-        print "=="*35
-        plate_1 = str(raw_input('\n\tEnter the first vehicle registration Number plate  : '))
-        plate_1 = plate_1.upper().strip()
-        if plate_validity(plate_1):
-            while True:
-                plate_2 = str(raw_input("\n\tEnter the second vehicle registration Number plate  : "))
-                plate_2 = plate_2.upper().strip()
-                if plate_validity(plate_2):
-                    break
-                else:
-                    print "\n\n"+"--"*35
-                    print "\t\t\tINVALID NUMBER PLATE   ---> {}".format(plate_2)
-                    print "\nThe format of the input should be in this format, 'KCA 081Y'\n"
-                    print "--"*35
-                    continue
-    
-        else:
-            print "\n\n"+"--"*35
-            print "\t\t\tINVALID NUMBER PLATE   ---> {}".format(plate_1)
-            print "\n\n"+"--"*35
-            continue
-        break
-        
-    print "\n\n"+"=="*35    
-    print "\nTO PRINT THE NUMBER OF VEHICLE IN BETWEEN {}  AND {}  ".format(plate_1,plate_2)  
-    
-    #the cars in between the two number plates calculations
-    
-    
-    
+    x="Enter the first vehicle registration Number plate"
+    y="Enter the second vehicle registration Number plate"
+    z="The number of vehicles in between the two vehicle is"
 
 
